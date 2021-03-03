@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form</title>
+</head>
+<body style="background-color:pink";>
+<form action="1.html">
+	<center><h1>Alumini Details Registration</h1></center>
+	<div  style="background-color: #3279a8; position: relative;left: 125px; top: 25px;">
+		<strong>Identify yourself</strong><br>
+	</div>
+	<div class="idetails" style="position: absolute;left: 140px; top: 150px;">		
+		Alumini Name :<br><br>
+		Gender :<br><br>
+		Date of birth :<br><br>
+		Examination : <br><br>
+		Year of Passing:<br><br><br>
+		House Color : <br><br>		
+		
+	</div>
+	<div class="iinfo" style="position: absolute;left: 400px; top: 150px;">
+
+		 <input type="text" name="alumininame"  autocomplete="on" required><br><br>
+		 <input type="radio" name="gender" value="Male" required/>Male
+		 <input type="radio" name="gender" value="Female"  required/>Female<br><br>
+		 <input type="date" name="dob" required><br><br>
+		 <select id="yop" >
+		 <option selected value="S.S.L.C">S.S.L.C</option>
+		 <option value="H.S.C">H.S.C</option>
+		 </select><br><br>
+		 <input type = "number"  min = "1972" max ="2020" step="1" value="2000" /><br><br>
+		 <input type="color" name="hcolor" value="red">
+	</div>
+	<div  style="background-color: #3279a8; position: relative;left: 125px; top: 295px;">
+		<strong>Contact Information</strong><br>
+	</div>
+	<div class="cdetails" style="position: relative;left: 140px; top: 315px;">
+		City <br><br>
+		State<br><br>
+		Country<br><br>
+		Mobile No<br><br>
+		Email address <br><br>
+	</div>
+	<div class="iinfo" style="position: absolute;left: 400px; top: 428px;">
+		<input type="text" required><br><br>
+		<input type="text" required><br><br>
+		<input type="text" required><br><br>
+		<input type="tel" pattern="[0-9]{10}" placeholder="**********" required/><br><br>
+		<input type="email" name="emailid" placeholder="example@example.com" required><br><br>
+	</div>
+	<div style="background-color: #3279a8; position: relative;left: 125px; top: 325px;">
+		<strong>Qualification Details</strong>
+	</div>
+	<div class="Qdetails" style="position: relative;left: 140px; top: 330px;">
+		Qualification/Profession<br>Category <br><br>
+		University<br><br>
+	</div>
+	<div class="Qinfo" style="position: absolute;left: 400px; top: 652px;">
+		<input type="text" list="cat" required><br><br>
+		 <datalist id="cat">
+            <option value="IT/CSE"/>
+            <option value="ECE"/>
+            <option value="MECH"/>
+            <option value="EEE"/>
+            <option value="CIVIL"/>
+            </datalist>
+		<input type="text" required><br><br>
+	</div> 
+	<div class="sub" style="position: absolute; left: 140px; top:750px;" >
+		Rate our School <input type="range" min="0" max="10" value="5"/><br><br>
+		<button class="button" type="submit">Submit</button>
+		<button class="button" type="reset">Reset</button>
+	</div>
+	<div style="position: absolute;text-align: center; top: 800px; left: 100px;">
+		<video height="350" width="550" autoplay muted >
+			<source src="tvmhss.mp4" type="video/mp4">
+				Not compactable
+		</video>
+	</div>
+	<div  style="position: absolute;left: 820px;top: 825px">
+		<img src="image.png"  alt="Mask" usemap="#workmap"/>
+           <map name="workmap">
+                <area shape="square" coords="220,55,550,232" href="http://www.tvsmhss.org/">
+		   </map>
+	</div>
+</form>
+</body>
+</html>

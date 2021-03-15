@@ -26,9 +26,9 @@
 
 			document.getElementById("eve").appendChild(row);
 			
-			document.getElementById("Eventname").value = "";
-			document.getElementById("date").value = "";
-			document.getElementById("ogby").value = "";
+			//document.getElementById("Eventname").value = "";
+			//document.getElementById("date").value = "";
+			//document.getElementById("ogby").value = "";
 
 		}
 
@@ -36,22 +36,30 @@
 			var currentDate = new Date();
 
 			var tab=document.getElementById("eve");
-			var rowLength = document.getElementById("eve").rows.length;
-			for(var i=1;i<=rowLength;i++){
-				var objCells = tab.rows.item(i).cells;
-				var eventDate = new Date(objCells.item(1).innerHTML);
-				if(eventDate<currentDate){
-					tab.deleteRow(i);
+			var rowLength = tab.rows.length;
+			var j=1;
+			while(j<=rowLength){
+				var i=1;
+				var cond=rowLength;
+				while(i<cond){
+					var objCells = tab.rows.item(i).cells;
+					var eventDate = new Date(objCells.item(1).innerHTML);
+					if(eventDate<currentDate){
+						tab.deleteRow(i);
+						i=1;
+						var cond=document.getElementById("eve").rows.length;
+					}
+					i++;
 				}
+			j++;
+		}
 			//document.getElementById('info').innerHTML = objCells.item(1).innerHTML;
 			/*var row = document.createElement("tr");
 			let cell_1=document.createElement("td");
 			let cell_1_value=document.createTextNode(objCells.item(1).innerHTML);
 			cell_1.appendChild(cell_1_value);
 			row.appendChild(cell_1);
-			document.getElementById("eve").appendChild(row);*/
-
-			}			
+			document.getElementById("eve").appendChild(row);*/		
 		}
 	</script>
 </head>

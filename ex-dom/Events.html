@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Events</title>
+	<script type="text/javascript">
+		function add(){
+			var row = document.createElement("tr");
+
+			let cell_1=document.createElement("td");
+			let evalue=document.getElementById("Eventname").value;
+			let cell_1_value=document.createTextNode(evalue);
+			cell_1.appendChild(cell_1_value);
+			row.appendChild(cell_1);
+
+			let cell_2=document.createElement("td");
+			let dvalue=document.getElementById("date").value;
+			let cell_2_value=document.createTextNode(dvalue);
+			cell_2.appendChild(cell_2_value)
+			row.appendChild(cell_2);
+
+			let cell_3=document.createElement("td");
+			let ovalue=document.getElementById("ogby").value;
+			let cell_3_value=document.createTextNode(ovalue);
+			cell_3.appendChild(cell_3_value);
+			row.appendChild(cell_3);
+
+			document.getElementById("eve").appendChild(row);
+			
+			document.getElementById("Eventname").value = "";
+			document.getElementById("date").value = "";
+			document.getElementById("ogby").value = "";
+
+		}
+
+		function check(){
+			var currentDate = new Date();
+
+			var tab=document.getElementById("eve");
+			var rowLength = document.getElementById("eve").rows.length;
+			for(var i=1;i<=rowLength;i++){
+				var objCells = tab.rows.item(i).cells;
+				var eventDate = new Date(objCells.item(1).innerHTML);
+				if(eventDate<currentDate){
+					tab.deleteRow(i);
+				}
+			//document.getElementById('info').innerHTML = objCells.item(1).innerHTML;
+			/*var row = document.createElement("tr");
+			let cell_1=document.createElement("td");
+			let cell_1_value=document.createTextNode(objCells.item(1).innerHTML);
+			cell_1.appendChild(cell_1_value);
+			row.appendChild(cell_1);
+			document.getElementById("eve").appendChild(row);*/
+
+			}			
+		}
+	</script>
+</head>
+<body>
+<form>
+	Event Name : <input type="text" name="Eventname" id="Eventname"><br>
+	Date : <input type="Date" name="date" id="date"><br>
+	Organized By : <input type="text" name="ogby" id="ogby"><br>
+	<button type="button" onclick="add()">Add Event</button>
+	<button type="button" onclick="check()">Refresh</button><br><br>
+	<table border="3px" id="eve">
+		<tr>
+			<th>Event Name </th> <th>Date</th> <th>Organised By</th>
+		</tr>
+	</table>
+	<p id="info">
+	</p>
+</form>
+</body>
+</html>
+
+

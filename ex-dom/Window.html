@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Window</title>
+	<script type="text/javascript">
+		var win;
+		function wopen(){
+			var url=prompt("Enter url","https://www.google.com/");
+			win=window.open(url);
+		}
+		function wclose(){
+			if(win){
+				win.close();
+			}
+			else{
+				alert("No window Opened , Open a window and then click close");
+			}
+		}
+		function makebig(){
+			document.getElementById("p1").style.fontSize  = "150%"
+		}
+		function normal(){
+  			document.getElementById("p1").style.fontSize  = "100%";
+		}
+		function windowSetOpen() {
+				setInterval(function(){
+					win=window.open("https://www.google.com/");
+					}, 2000); 
+		}
+		
+
+	</script>
+</head>
+<body>
+	<button type="button" onclick="wopen()">Open Window</button>
+	<button type="button" onclick="wclose()">Close Window</button><br>
+	<p id=p1 onmouseover="makebig()" onmouseout="normal()">Hover over this text to make bigger</p>
+	<button type="button" onclick="windowSetOpen()">Open Window every 2 sec</button>
+</body>
+</html>
